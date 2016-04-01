@@ -22,7 +22,16 @@ public class SierpinskiTriangle {
 	}
    
 	public void sierpinski(Point2D.Double a, Point2D.Double b, Point2D.Double c, int n) {
+	   Point2D.Double newA = new Point2D.Double(Math.abs(a.x + c.x)/ 2.0, Math.abs(a.y + c.y) / 2.0); 
+	   Point2D.Double newB = new Point2D.Double(Math.abs(a.x + b.x)/ 2.0, Math.abs(a.y + b.y) / 2.0); 
+	   Point2D.Double newC = new Point2D.Double(Math.abs(b.x + c.x)/ 2.0, Math.abs(b.y + c.y) / 2.0); 
+	   drawTriangle(a, b, c, StdDraw.WHITE);
 	   
+	   if (n <= 0) {
+		   drawTriangle(a, newA, newC, StdDraw.BLACK);
+		   drawTriangle(newA, newC, c, StdDraw.BLACK);
+		   drawTriangle(newB, b, newC, StdDraw.BLACK);		   
+	   } 
     }
    
 	public void drawTriangle(Point2D.Double a, Point2D.Double b, Point2D.Double c, Color color) {
