@@ -1,24 +1,32 @@
 package part2;
 
 import java.awt.Color;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
 import java.awt.geom.Point2D;
-import draw.StdDraw;
+import draw.UltraDraw;
 
-public class SierpinskiTriangle {
+
+public class SierpinskiTriangle implements MouseListener{
 
 	private Color background = new Color(34, 129, 34);
-	private Color foreground = StdDraw.GRAY;
+	private Color foreground = UltraDraw.GRAY;
 	Point2D.Double top, right, left;
 
 	public SierpinskiTriangle() {
-		StdDraw.setXscale(0, 150);
-		StdDraw.setYscale(75, 150);
+		UltraDraw.addMouseListener(this);
+		for(int i = 0; i < colors.length; i ++) {
+			colors[i] = new Color(rand.nextln);
+		}
+		
+		UltraDraw.setXscale(0, 150);
+		UltraDraw.setYscale(75, 150);
 
 		top = new Point2D.Double(75, 150);
 		right = new Point2D.Double(150, 75);
 		left = new Point2D.Double(0, 75);
 
-		StdDraw.clear(StdDraw.BLACK);
+		UltraDraw.clear(UltraDraw.BLACK);
 	}
 
 	public void sierpinski(Point2D.Double top, Point2D.Double right, Point2D.Double left, int n) {
@@ -38,8 +46,8 @@ public class SierpinskiTriangle {
 	public void drawTriangle(Point2D.Double a, Point2D.Double b, Point2D.Double c, Color color) {
 		double[] x = { a.x, b.x, c.x };
 		double[] y = { a.y, b.y, c.y };
-		StdDraw.setPenColor(color);
-		StdDraw.filledPolygon(x, y);
+		UltraDraw.setPenColor(color);
+		UltraDraw.filledPolygon(x, y);
 	}
 
 	public void draw(int n) {
@@ -50,5 +58,35 @@ public class SierpinskiTriangle {
 	public static void main(String[] args) {
 		SierpinskiTriangle triangle = new SierpinskiTriangle();
 		triangle.draw(10);
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		System.out.println(e);
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
