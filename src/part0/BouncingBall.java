@@ -10,7 +10,7 @@
  ******************************************************************************/
 
 package part0;
-import draw.StdDraw;
+import draw.UltraDraw;
 
 public class BouncingBall { 
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package part3;
 import java.awt.geom.Point2D;
-import draw.StdDraw;
+import draw.UltraDraw;
 
 
 public class H {
@@ -20,9 +20,9 @@ public class H {
 	}
 	
 	public void draw() {
-		StdDraw.line(points[0].x, points[0].y, points[3].x, points[3].y);
-		StdDraw.line(points[1].x, points[1].y, points[2].x, points[2].y);
-		StdDraw.line(points[4].x, points[4].y, points[5].x, points[5].y);
+		UltraDraw.line(points[0].x, points[0].y, points[3].x, points[3].y);
+		UltraDraw.line(points[1].x, points[1].y, points[2].x, points[2].y);
+		UltraDraw.line(points[4].x, points[4].y, points[5].x, points[5].y);
 	}
 	
 	public Point2D.Double getTopLeft() {

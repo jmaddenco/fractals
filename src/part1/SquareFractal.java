@@ -1,7 +1,7 @@
  package part1;
 import java.awt.Color;
 import java.awt.geom.Point2D;
-import draw.StdDraw;
+import draw.UltraDraw;
 
 
 public class SquareFractal {
